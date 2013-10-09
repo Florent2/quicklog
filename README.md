@@ -12,6 +12,10 @@ write
 
 For Ruby 2+ only.
 
+## Examples
+
+* logging an object attribute: `ql :"@user.name"`
+
 ## Installation
 
 Add this line to your application's Gemfile:
