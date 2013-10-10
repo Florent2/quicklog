@@ -20,4 +20,14 @@ class QuicklogTest < Minitest::Test
     ql :"person.name"
   end
 
+  def test_log_string
+    $stdout.expects(:puts).with(in_reverse_video "my message")
+    ql "my message"
+  end
+
+  def test_log_object_convertible_to_string
+    $stdout.expects(:puts).with(in_reverse_video "2")
+    ql 2
+  end
+
 end

@@ -2,14 +2,19 @@ require "quicklog/version"
 require 'debug_inspector'
 
 module Quicklog
-  def self.ql var_symbol
-    RubyVM::DebugInspector.open do |inspector|
-      value = eval var_symbol.to_s, inspector.frame_binding(3)
-      puts reverse_video "#{var_symbol} = #{value}"
-    end
+  def self.ql param
+    output = param.is_a?(Symbol) ? label_and_value_as_string(param) : String(param)
+    puts reverse_video output
   end
 
   private
+
+  def self.label_and_value_as_string symbol
+    RubyVM::DebugInspector.open do |inspector|
+      value = eval symbol.to_s, inspector.frame_binding(4)
+      "#{symbol} = #{value}"
+    end
+  end
 
   def self.reverse_video string
     "\e[7m" + string + "\e[0m"
@@ -17,8 +22,8 @@ module Quicklog
 end
 
 module Kernel
-  def ql var_symbol
-    Quicklog.ql var_symbol
+  def ql param
+    Quicklog.ql param
   end
   module_function :ql
 end

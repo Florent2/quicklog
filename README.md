@@ -12,13 +12,15 @@ write
 
 For Ruby 2+ only.
 
-## Examples
-
-* logging an object attribute: `ql :"@user.name"`
-
 ## Additional features
 
 * display output in reverse video, it's easier to see
+* not limited to variable logging, can log anything that can be converted to a string
+
+## Examples
+
+* logging an object attribute: `ql :"@user.name"`
+* logging a plain string: `ql "hello world!"`
 
 ## Installation
 
@@ -50,7 +52,6 @@ I found the solution I needed in this [stackoverflow answer](http://stackoverflo
 
 ## TODO
 
-* allow logging of strings, ie `ql "hi!"`
 * use inspect to output the expression
 * use Awesome Print if available
 * allow logging of string + variable: `ql "hi!", :my_var`
