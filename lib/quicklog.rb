@@ -5,8 +5,14 @@ module Quicklog
   def self.ql var_symbol
     RubyVM::DebugInspector.open do |inspector|
       value = eval var_symbol.to_s, inspector.frame_binding(3)
-      puts "#{var_symbol} = #{value}"
+      puts reverse_video "#{var_symbol} = #{value}"
     end
+  end
+
+  private
+
+  def self.reverse_video string
+    "\e[7m" + string + "\e[0m"
   end
 end
 

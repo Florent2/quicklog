@@ -16,6 +16,10 @@ For Ruby 2+ only.
 
 * logging an object attribute: `ql :"@user.name"`
 
+## Additional features
+
+* display output in reverse video, it's easier to see
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -46,7 +50,6 @@ I found the solution I needed in this [stackoverflow answer](http://stackoverflo
 
 ## TODO
 
-* display in reverse video
 * allow logging of strings, ie `ql "hi!"`
 * use inspect to output the expression
 * use Awesome Print if available
