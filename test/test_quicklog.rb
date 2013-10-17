@@ -21,7 +21,7 @@ class QuicklogTest < Minitest::Test
 
   def test_log_object_attribute
     person   = Struct.new(:name).new "David"
-    expected = in_reverse_video "person.name = David"
+    expected = in_reverse_video 'person.name = "David"'
 
     expect $stdout, :puts, with: [expected], returns: nil do
       ql :"person.name"

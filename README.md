@@ -52,8 +52,5 @@ I found the solution I needed in this [stackoverflow answer](http://stackoverflo
 
 ## TODO
 
-* use inspect to output the expression
 * use Awesome Print if available
-* allow logging of string + variable: `ql "hi!", :my_var`
-* allow logging of several variables: `ql :my_var1, :my_var2, :my_var3`
 * logs through Rails.logger if available

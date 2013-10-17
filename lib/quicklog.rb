@@ -12,7 +12,7 @@ module Quicklog
   def self.label_and_value_as_string symbol
     RubyVM::DebugInspector.open do |inspector|
       value = eval symbol.to_s, inspector.frame_binding(4)
-      "#{symbol} = #{value}"
+      "#{symbol} = #{value.inspect}"
     end
   end
 
